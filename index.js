@@ -1,5 +1,17 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let curr = 0; curr < array.length; curr++) {/* Time O(N) */
+  const difference = target - array[curr];
+
+  for (let next = (curr + 1); next < array.length; next++) {/* Time O(N) */
+      const num = array[next];
+
+      const isTarget = num === difference
+      if (isTarget) return true;
+  }
+}
+
+return false;
 }
 
 /* 
